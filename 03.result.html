@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            margin-top: 40px;
+            height: 700px;
+            width: 800px;
+            border: 2px solid black;
+            padding-top: 30px;
+            margin-left: 20%;
+            
+        }
+
+        .result {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .inp {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+        }
+
+        .subject {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 30px;
+        }
+
+        #mark {
+            height: 50px;
+            width: auto;
+            border: 2px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+        #per {
+            height: 50px;
+            width: auto;
+            border: 2px solid black;
+            border: none;
+        }
+
+        button {
+            height: 50px;
+            width: 80px;
+        }
+        h3{
+            padding-left:45% ;
+        }
+        li{
+            text-align: center;
+            list-style-type:disc ;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul><li><h1>Create result</h1></li></ul>
+    <div class="main">
+       <h1>Marksheet for Information Technology</h1>
+       <br>
+       <br>
+       <br>
+       <h3>Enter Marks</h3> <br><br><br>
+        <div class="result">
+            <div class="subject">
+                <div class="a">1. C Language</div>
+                <div class="a">2. C++ Language </div>
+                <div class="a">3. Database</div>
+                <div class="a">4. HTML</div>
+                <div class="a">5. CSS</div>
+                <div class="a">6. php</div>
+                <div class="a">7. Core java</div>
+            </div>
+            <div class="inp">
+                <input type="text" name="" id="inp1" value="">
+                <input type="text" name="" id="inp2" value="">
+                <input type="text" name="" id="inp3" value="">
+                <input type="text" name="" id="inp4" value="">
+                <input type="text" name="" id="inp5" value="">
+                <input type="text" name="" id="inp6" value="">
+                <input type="text" name="" id="inp7" value="">
+            </div>
+        </div>
+
+
+        <div class="btn">
+            <button onclick="set()">total</button>
+            <div id="mark"> Totle is:</div>
+            <div id="per"> <br> Percentage is:</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function set() {
+        var data1 = document.getElementById("inp1").value
+        document.getElementById("mark").innerHTML = data1
+
+        var data2 = document.getElementById("inp2").value
+        document.getElementById("mark").innerHTML = data2
+
+        var data3 = document.getElementById("inp3").value
+        document.getElementById("mark").innerHTML = data3
+
+        var data4 = document.getElementById("inp4").value
+        document.getElementById("mark").innerHTML = data4
+
+        var data5 = document.getElementById("inp5").value
+        document.getElementById("mark").innerHTML = data5
+
+        var data6 = document.getElementById("inp6").value
+        document.getElementById("mark").innerHTML = data6
+
+        var data7 = document.getElementById("inp7").value
+        document.getElementById("mark").innerHTML = data7
+
+        var mark = +data1 + +data2 + +data3 + +data4 + +data5 + +data6 + +data7
+        document.getElementById("mark").innerHTML = mark
+
+        var per = (mark / 700) * 100
+        document.getElementById("per").innerHTML = per
+
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Math Operations</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+        button{
+            height: 50px;
+            width: 50px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1> Math Operations</h1>
+    <label for="num1"> <b>Enter first number:</b></label>
+    <input type="number" id="num1"><br><br>
+    <label for="num2"> <b>Enter second number:</b></label>
+    <input type="number" id="num2"><br><br>
+    <button onclick="performOperations('+')">+</button>
+    <button onclick="performOperations('-')">-</button>
+    <button onclick="performOperations('*')">*</button> <br> <br>
+    <button onclick="performOperations('/')">/</button>
+    <button onclick="performOperations('%')">%</button>
+    <h2>Answer is:</h2>
+    <p id="result"></p>
+
+    <script>
+        function performOperations(operation) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerText = "Please enter valid numbers.";
+                return;
+            }
+
+            let result;
+            switch (operation) {
+                case '+':
+                    result = `Addition: ${num1 + num2}`;
+                    break;
+                case '-':
+                    result = `Subtraction: ${num1 - num2}`;
+                    break;
+                case '*':
+                    result = `Multiplication: ${num1 * num2}`;
+                    break;
+                case '/':
+                    result = num2 !== 0 ? `Division: ${(num1 / num2).toFixed(2)}` : "Division by zero is not allowed.";
+                    break;
+                case '%':
+                    result = num2 !== 0 ? `Modulus: ${num1 % num2}` : "Modulus by zero is not allowed.";
+                    break;
+                default:
+                    result = "Unknown operation.";
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

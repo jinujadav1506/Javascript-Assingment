@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Show/Hide</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0056d2; /* Match the blue background in the image */
+}
+
+/* Password Container */
+.password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e6f0fc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Password Field */
+.password-field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.password-field input {
+  border: none;
+  font-size: 16px;
+  outline: none;
+  width: 250px;
+  background: none;
+}
+
+.password-field input::placeholder {
+  color: #aaa;
+}
+
+.password-field button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #0056d2;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.password-field button:hover {
+  color: #003d99;
+}
+
+  </style>
+</head>
+<body>
+  <div class="password-container">
+    <div class="password-field">
+      <input type="password" id="password" placeholder="Enter your password">
+      <button class="toggle-password" id="togglePassword">Show</button>
+    </div>
+  </div>
+  <script>
+    const passwordInput = document.getElementById('password');
+const togglePasswordButton = document.getElementById('togglePassword');
+
+togglePasswordButton.addEventListener('click', () => {
+  // Toggle the input type between 'password' and 'text'
+  const isPassword = passwordInput.type === 'password';
+  passwordInput.type = isPassword ? 'text' : 'password';
+
+  // Change the button text
+  togglePasswordButton.textContent = isPassword ? 'Hide' : 'Show';
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #one{
+      height: 500px;
+      width: 100%;
+      border: 2px solid black;
+      background-color:rgb(112, 43, 112);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button{
+        height: 50px;
+        width: 150px;
+        background-color: aquamarine;
+    }
+    .num{
+        font-size: 20px;
+    }
+    li{
+        padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<ul><li><h2>Creating background using java script</h2></li></ul>
+<br>
+<br>
+  <div id="one"> 
+    <div> <button onclick="Toggle ()"><h4>Change BG color </h4></button></div>
+    <div class="num"><h1>#532187</h1></div>
+</div>
+
+</body>
+<script>
+    function Toggle()
+    {
+       var value = document . getElementById("one")
+
+      if( value.innerHTML == "Hello")
+    {
+      value.innerHTML 
+      value. style.backgroundColor="aqua"
+      value.style.color ="black"
+    }
+
+      else{
+        value.innerHTML
+          value. style.backgroundColor="red"
+          value.style.color ="black"
+      }
+    }
+</script>
+</html>   
